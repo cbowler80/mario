@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+    //Ask users for input --> define float value
+{  
+float c;
+
+    do
+        {
+        printf("How much change are you owed? Input answer in traditional $0.00 format. Thanks!\n");
+        c = GetFloat( );
+        }
+    while (c < 0);
+
+    // DEAL WITH ROUNDING ISSUES HERE --> runningvalue is rounded
+    
+        c=c*100; 
+        int r = round(c);
+        int runningvalue = r;
+
+    // Introduce variable required for the algorithm -- including counter
+    
+int x;
+int q = 25;
+int d = 10;
+int n = 5;
+int p = 1;
+
+int count = 0;
+    
+    // Run the greedy algorithm
+    
+        while (runningvalue >= q)
+        {
+            x = runningvalue/q;
+            count = count + x;
+            runningvalue = runningvalue - (x*q);
+        }
+    
+        while (runningvalue >= d)
+        {
+            x = runningvalue/d;
+            count = count + x;
+            runningvalue = runningvalue - (x*d);
+        }
+        
+        while (runningvalue >= n)
+        {
+            x = runningvalue/n;
+            count = count + x;
+            runningvalue = runningvalue - (x*n);
+        }
+        
+       while (runningvalue >= p)
+        {
+            x = runningvalue/p;
+            count = count + x;
+            runningvalue = runningvalue - (x*p);
+        }    
+        
+        // Print out the final count 
+        
+        printf("%i\n", count);
+        
+    }
