@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+
+{
+    printf("How many minutes is your typical daily shower?");
+    int m = GetInt();
+   
+        printf("Your daily shower uses the equivalent of %d bottles of water.\n", 12*m);
+    
+}
