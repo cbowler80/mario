@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+
+{
+    const int minh = 0;
+    const int maxh = 23;
+    int h;
+    int r;
+    int s;
+    int x;
+        // h is user input --> height
+        // r = rows
+        // s = space
+        // x = #
+
+    do
+    {
+    printf("Please enter an integer between %i and %i: ", minh, maxh);
+    h = GetInt();
+    }
+    while (h > maxh || h < minh);
+
+    
+    for (r = 0; r < h; r++)
+    {
+        for (s = (h - r); s > 0; s--)
+        {
+             printf(" ");
+        }
+        
+        for (x = 0; x < (r + 2); x++)
+        {
+            printf("#");
+        }
+        
+        printf("\n");
+        
+    }  
+
+} 
+ 
+ 
+ 
+ 
+ 
